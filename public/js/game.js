@@ -475,7 +475,7 @@ $.renderInterface = function () {
   $.ctxmg.beginPath();
   var healthText = $.text({
     ctx: $.ctxmg,
-    x: 20,
+    x: 80,
     y: 20,
     text: "HEALTH",
     hspacing: 1,
@@ -542,7 +542,7 @@ $.renderInterface = function () {
   $.ctxmg.beginPath();
   var progressText = $.text({
     ctx: $.ctxmg,
-    x: healthBar.x + healthBar.width + 40,
+    x: healthBar.x + healthBar.width + 20,
     y: 20,
     text: "PROGRESS",
     hspacing: 1,
@@ -615,7 +615,7 @@ $.renderInterface = function () {
   $.ctxmg.beginPath();
   var scoreLabel = $.text({
     ctx: $.ctxmg,
-    x: progressBar.x + progressBar.width + 40,
+    x: progressBar.x + progressBar.width + 20,
     y: 20,
     text: "SCORE",
     hspacing: 1,
@@ -649,7 +649,7 @@ $.renderInterface = function () {
   $.ctxmg.beginPath();
   var bestLabel = $.text({
     ctx: $.ctxmg,
-    x: scoreText.ex + 40,
+    x: scoreText.ex + 20,
     y: 20,
     text: "BEST",
     hspacing: 1,
