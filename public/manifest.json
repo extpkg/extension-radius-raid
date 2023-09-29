@@ -29,7 +29,8 @@
       "module_version": "1.0.2"
     },
     "websessions": {
-      "permissions": [],
+      "permissions": ["create.persistent"],
+      "optional_permissions": ["*"],
       "module_version": "1.0.1"
     }
   }
