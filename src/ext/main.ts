@@ -41,6 +41,7 @@ ext.runtime.onExtensionClick.addListener(async () => {
     tab = await ext.tabs.create({
       text: title,
       icon: "./assets/128.png",
+      mutable: true,
     });
 
     window = await ext.windows.create({
