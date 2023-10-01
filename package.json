@@ -1,7 +1,7 @@
 {
   "name": "extension-radius-raid",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.3",
+  "description": "Space adventure with arcade action.",
   "type": "module",
   "scripts": {
     "build": "cross-env NODE_ENV=production node ./scripts/build.mjs",
