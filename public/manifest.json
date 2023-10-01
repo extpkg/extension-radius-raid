@@ -3,7 +3,7 @@
   "name": "Radius Raid",
   "short_name": "Radius Raid",
   "description": "",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "EXT, Inc.",
   "icons": {
     "128": "./assets/128.png",
@@ -29,8 +29,8 @@
       "module_version": "1.0.2"
     },
     "websessions": {
-      "permissions": ["create.persistent"],
-      "optional_permissions": ["*"],
+      "optional_permissions": ["create.persistent"],
+      "permissions": [],
       "module_version": "1.0.1"
     }
   }
