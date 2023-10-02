@@ -1157,12 +1157,14 @@ $.setState = function (state) {
       title: "CLEAR DATA",
       action: function () {
         $.mouse.down = 0;
-        if (
-          window.confirm(
-            "Are you sure you want to clear all locally stored game data? This cannot be undone.",
-          )
-        ) {
+
+        if (this.confirm === true) {
           $.clearStorage();
+          $.mouse.down = 0;
+          this.updateTitle("CLEAR DATA");
+        } else {
+          this.confirm = true;
+          this.updateTitle("ARE YOU SURE?");
           $.mouse.down = 0;
         }
       },
@@ -1185,20 +1187,6 @@ $.setState = function (state) {
 
   if (state == "credits") {
     $.mouse.down = 0;
-
-    var js13kButton = new $.Button({
-      x: $.cw / 2 + 1,
-      y: 476,
-      lockedWidth: 299,
-      lockedHeight: 49,
-      scale: 3,
-      title: "JS13KGAMES",
-      action: function () {
-        location.href = "http://js13kgames.com";
-        $.mouse.down = 0;
-      },
-    });
-    $.buttons.push(js13kButton);
 
     var menuButton = new $.Button({
       x: $.cw / 2 + 1,
@@ -1240,13 +1228,14 @@ $.setState = function (state) {
       title: "MENU",
       action: function () {
         $.mouse.down = 0;
-        if (
-          window.confirm(
-            "Are you sure you want to end this game and return to the menu?",
-          )
-        ) {
+
+        if (this.confirm === true) {
           $.mousescreen();
           $.setState("menu");
+          this.updateTitle("MENU");
+        } else {
+          this.confirm = true;
+          this.updateTitle("ARE YOU SURE?");
         }
       },
     });

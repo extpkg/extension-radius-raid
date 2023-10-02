@@ -31,6 +31,11 @@ $.Button = function (opt) {
   this.ohovering = 0;
 };
 
+$.Button.prototype.updateTitle = function (newTitle) {
+  this.title = newTitle;
+  this.render(); // redraw the button with the new title
+};
+
 /*==============================================================================
 Update
 ==============================================================================*/
