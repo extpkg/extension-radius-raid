@@ -1,6 +1,6 @@
 {
   "name": "extension-radius-raid",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Space adventure with arcade action.",
   "type": "module",
   "scripts": {
