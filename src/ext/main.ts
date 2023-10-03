@@ -83,6 +83,9 @@ ext.runtime.onExtensionClick.addListener(async () => {
     //   activate: true,
     // });
 
+    await ext.windows.focus(window.id);
+    await ext.webviews.focus(webview.id);
+
     instance = {
       tabId: tab.id,
       windowId: window.id,
