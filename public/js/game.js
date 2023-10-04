@@ -1154,17 +1154,17 @@ $.setState = function (state) {
       lockedWidth: 299,
       lockedHeight: 49,
       scale: 3,
-      title: "CLEAR DATA",
+      title: "RESET",
       action: function () {
         $.mouse.down = 0;
 
         if (this.confirm === true) {
           $.clearStorage();
           $.mouse.down = 0;
-          this.updateTitle("CLEAR DATA");
+          this.updateTitle("RESET");
         } else {
           this.confirm = true;
-          this.updateTitle("ARE YOU SURE?");
+          this.updateTitle("CONFIRM RESET");
           $.mouse.down = 0;
         }
       },
@@ -1235,7 +1235,7 @@ $.setState = function (state) {
           this.updateTitle("MENU");
         } else {
           this.confirm = true;
-          this.updateTitle("ARE YOU SURE?");
+          this.updateTitle("EXIT AND LOSE");
         }
       },
     });
