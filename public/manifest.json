@@ -3,7 +3,7 @@
   "name": "Radius Raid",
   "short_name": "Radius Raid",
   "description": "Space adventure with arcade action.",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "author": "EXT, Inc.",
   "icons": {
     "128": "./assets/128.png",

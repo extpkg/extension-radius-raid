@@ -1162,6 +1162,7 @@ $.setState = function (state) {
           $.clearStorage();
           $.mouse.down = 0;
           this.updateTitle("RESET");
+          this.confirm = false;
         } else {
           this.confirm = true;
           this.updateTitle("CONFIRM RESET");
@@ -1233,6 +1234,7 @@ $.setState = function (state) {
           $.mousescreen();
           $.setState("menu");
           this.updateTitle("MENU");
+          this.confirm = false;
         } else {
           this.confirm = true;
           this.updateTitle("EXIT AND LOSE");
