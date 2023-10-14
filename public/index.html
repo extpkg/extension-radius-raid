@@ -53,7 +53,7 @@
         top: 0;
         left: 0;
         right: 0;
-        height: 32px;
+        height: 40px;
         background-color: transparent;
         z-index: 2;
         -webkit-app-region: drag;
@@ -93,5 +93,12 @@
     <script src="js/levelpop.js"></script>
     <script src="js/button.js"></script>
     <script src="js/game.js"></script>
+    <script type="module">
+      const platformInfo = await ext.runtime.getPlatformInfo();
+
+      if (platformInfo.os !== "mac") {
+        document.getElementById("frame").style.right = "105px";
+      }
+    </script>
   </body>
 </html>
