@@ -2,10 +2,6 @@
 <html>
   <head>
     <title>Radius Raid</title>
-    <link
-      rel="shortcut icon"
-      id="favicon"
-    />
 
     <style>
       * {
@@ -95,9 +91,12 @@
     <script src="js/game.js"></script>
     <script type="module">
       const platformInfo = await ext.runtime.getPlatformInfo();
+      const webview = await ext.webviews.getCurrent();
+      const window = await ext.webviews.getAttachedWindow(webview.id);
+      const insetSize = await ext.windows.getInsetSize(window.id);
 
-      if (platformInfo.os !== "mac") {
-        document.getElementById("frame").style.right = "105px";
+      if (platformInfo.os !== "mac" && insetSize) {
+        document.getElementById("frame").style.right = `${insetSize.width}px`;
       }
     </script>
   </body>

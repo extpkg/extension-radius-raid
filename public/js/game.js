@@ -2,6 +2,9 @@
 Init
 ==============================================================================*/
 $.init = function () {
+  ext.runtime.getPlatformInfo().then(({ os }) => {
+    $.os = os;
+  });
   $.setupStorage();
   $.wrap = document.getElementById("wrap");
   $.wrapInner = document.getElementById("wrap-inner");
@@ -475,7 +478,7 @@ $.renderInterface = function () {
   $.ctxmg.beginPath();
   var healthText = $.text({
     ctx: $.ctxmg,
-    x: 80,
+    x: $.os === "mac" ? 80 : 20, // TODO: win/lin support
     y: 20,
     text: "HEALTH",
     hspacing: 1,
@@ -491,7 +494,7 @@ $.renderInterface = function () {
   var healthBar = {
     x: healthText.ex + 10,
     y: healthText.sy,
-    width: 110,
+    width: $.os === "mac" ? 100 : 90,
     height: 10,
   };
   $.ctxmg.fillStyle = "hsla(0, 0%, 20%, 1)";
@@ -542,7 +545,7 @@ $.renderInterface = function () {
   $.ctxmg.beginPath();
   var progressText = $.text({
     ctx: $.ctxmg,
-    x: healthBar.x + healthBar.width + 20,
+    x: healthBar.x + healthBar.width + ($.os === "mac" ? 20 : 15),
     y: 20,
     text: "PROGRESS",
     hspacing: 1,
@@ -615,7 +618,7 @@ $.renderInterface = function () {
   $.ctxmg.beginPath();
   var scoreLabel = $.text({
     ctx: $.ctxmg,
-    x: progressBar.x + progressBar.width + 20,
+    x: progressBar.x + progressBar.width + 40,
     y: 20,
     text: "SCORE",
     hspacing: 1,
@@ -649,7 +652,7 @@ $.renderInterface = function () {
   $.ctxmg.beginPath();
   var bestLabel = $.text({
     ctx: $.ctxmg,
-    x: scoreText.ex + 20,
+    x: scoreText.ex + ($.os === "mac" ? 20 : 15),
     y: 20,
     text: "BEST",
     hspacing: 1,
