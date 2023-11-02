@@ -438,8 +438,8 @@ $.renderInterface = function () {
   $.ctxmg.beginPath();
   var healthText = $.text({
     ctx: $.ctxmg,
-    x: $.os === "mac" ? 80 : 20, // TODO: win/lin support
-    y: 20,
+    x: $.os === "mac" ? 80 : 15,
+    y: $.os === "mac" ? 14 : 15,
     text: "HEALTH",
     hspacing: 1,
     vspacing: 1,
@@ -506,7 +506,7 @@ $.renderInterface = function () {
   var progressText = $.text({
     ctx: $.ctxmg,
     x: healthBar.x + healthBar.width + ($.os === "mac" ? 20 : 15),
-    y: 20,
+    y: $.os === "mac" ? 14 : 15,
     text: "PROGRESS",
     hspacing: 1,
     vspacing: 1,
@@ -578,8 +578,8 @@ $.renderInterface = function () {
   $.ctxmg.beginPath();
   var scoreLabel = $.text({
     ctx: $.ctxmg,
-    x: progressBar.x + progressBar.width + 40,
-    y: 20,
+    x: progressBar.x + progressBar.width + 46,
+    y: $.os === "mac" ? 14 : 15,
     text: "SCORE",
     hspacing: 1,
     vspacing: 1,
@@ -596,7 +596,7 @@ $.renderInterface = function () {
   var scoreText = $.text({
     ctx: $.ctxmg,
     x: scoreLabel.ex + 10,
-    y: 20,
+    y: $.os === "mac" ? 14 : 15,
     text: $.util.pad($.score, 6),
     hspacing: 1,
     vspacing: 1,
@@ -613,7 +613,7 @@ $.renderInterface = function () {
   var bestLabel = $.text({
     ctx: $.ctxmg,
     x: scoreText.ex + ($.os === "mac" ? 20 : 15),
-    y: 20,
+    y: $.os === "mac" ? 14 : 15,
     text: "BEST",
     hspacing: 1,
     vspacing: 1,
@@ -630,7 +630,7 @@ $.renderInterface = function () {
   var bestText = $.text({
     ctx: $.ctxmg,
     x: bestLabel.ex + 10,
-    y: 20,
+    y: $.os === "mac" ? 14 : 15,
     text: $.util.pad(Math.max($.storage["score"], $.score), 6),
     hspacing: 1,
     vspacing: 1,
