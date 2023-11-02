@@ -42,7 +42,6 @@ $.init = function () {
     y: ($.wh - $.ch) / -2,
   };
 
-  $.mute = $.storage["mute"];
   $.autofire = $.storage["autofire"];
   $.slowEnemyDivider = 3;
 
@@ -365,7 +364,7 @@ $.renderInterface = function () {
       ctx: $.ctxmg,
       x: $.cw / 2 - 10,
       y: $.ch - 20,
-      text: "MOVE\nAIM/FIRE\nAUTOFIRE\nPAUSE\nMUTE",
+      text: "MOVE\nAIM/FIRE\nAUTOFIRE\nPAUSE",
       hspacing: 1,
       vspacing: 17,
       halign: "right",
@@ -397,7 +396,7 @@ $.renderInterface = function () {
       ctx: $.ctxmg,
       x: $.cw / 2 + 10,
       y: $.ch - 20,
-      text: "WASD/ARROWS\nMOUSE\nF\nP\nM",
+      text: "WASD/ARROWS\nMOUSE\nF\nP",
       hspacing: 1,
       vspacing: 17,
       halign: "left",
@@ -1754,17 +1753,6 @@ $.loop = function () {
 
   // run the current state
   $.states[$.state]();
-
-  // always listen for mute toggle
-  if ($.keys.pressed.m) {
-    $.mute = ~~!$.mute;
-    var i = $.audio.references.length;
-    while (i--) {
-      $.audio.references[i].volume = ~~!$.mute;
-    }
-    $.storage["mute"] = $.mute;
-    $.updateStorage();
-  }
 
   // move current keys into old keys
   $.okeys = {};
